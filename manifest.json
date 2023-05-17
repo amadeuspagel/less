@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "No Manual Twitter",
+  "version": "1.0",
+  "description": "Closes the tab when visiting twitter.com from the address bar",
+  "permissions": [
+    "tabs",
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
