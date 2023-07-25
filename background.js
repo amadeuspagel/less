@@ -1,4 +1,3 @@
-
 chrome.webNavigation.onCommitted.addListener(async (details) => {
   let { sites } = await chrome.storage.sync.get("sites")
 
