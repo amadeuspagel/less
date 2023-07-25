@@ -1,5 +1,7 @@
+const sites = ["twitter.com", "news.ycombinator.com"]
+
 chrome.webNavigation.onCommitted.addListener((details) => {
-  if (details.url.includes("twitter.com") && details.transitionType === "typed") {
+  if (sites.filter(site => details.url.includes(site)).length && details.transitionType === "typed") {
     chrome.tabs.remove(details.tabId);
   }
 });

@@ -1,13 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "No Manual Twitter",
+  "name": "less",
   "version": "1.0",
-  "description": "Closes the tab when visiting twitter.com from the address bar",
+  "description": "close tabs with certain sites only when you open them from the addressbar",
   "permissions": [
     "tabs",
     "webNavigation"
   ],
   "background": {
     "service_worker": "background.js"
+  },
+  "icons": {
+    "256": "icon256.png"
   }
 }
