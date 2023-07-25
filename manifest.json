@@ -5,12 +5,14 @@
   "description": "close tabs with certain sites only when you open them from the addressbar",
   "permissions": [
     "tabs",
-    "webNavigation"
+    "webNavigation",
+    "storage"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "icons": {
     "256": "icon256.png"
-  }
+  },
+  "options_page": "options.html"
 }
