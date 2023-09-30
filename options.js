@@ -1,11 +1,11 @@
-const { sites } = await chrome.storage.sync.get("sites")
+const { blocklist } = await chrome.storage.sync.get("blocklist") || ""
 
 const textarea = document.querySelector("textarea")
 
-textarea.value = sites
+textarea.value = blocklist
 
 textarea.oninput = (e) => {
   chrome.storage.sync.set({
-    sites: e.target.value
+    blocklist: e.target.value
   })
 }

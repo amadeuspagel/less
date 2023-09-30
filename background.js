@@ -1,11 +1,7 @@
 chrome.webNavigation.onCommitted.addListener(async (details) => {
-  let { sites } = await chrome.storage.sync.get("sites")
-
-  sites = sites.split("\n")
-
-  console.log(sites)
-
-  if (sites.filter(site => details.url.includes(site)).length && details.transitionType === "typed") {
-    chrome.tabs.remove(details.tabId);
-  }
+  const { blocklist } = await chrome.storage.sync.get("blocklist")
+  const { hostname } = new URL(details.url)
+  const match = blocklist.includes(hostname)
+  const typed = details.transitionType === "typed"
+  if (match && typed) chrome.tabs.remove(details.tabId);
 });
